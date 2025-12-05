@@ -246,7 +246,7 @@ function MusiqueJeu(bActif) {
 // Fonction dessinant le score du joueur
 
 function dessinerUI() {
-    oContexte.fillStyle = "purple";
+    oContexte.fillStyle = "#a84d9d";
     oContexte.fillText(`Question : ${nQuestionActuelle} / 3`, 775, 75);
 }
 
