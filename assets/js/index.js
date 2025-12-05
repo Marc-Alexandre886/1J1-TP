@@ -11,7 +11,7 @@ oContexte.imageSmoothingEnabled = false;
 
 let sEtatJeu = "intro";
 let bQuestionnaire;
-let nQuestionActuelle;
+let nQuestionActuelle = 1;
 
 //Variables objets
 
@@ -99,7 +99,7 @@ function clicCanvas() {
         if (bCollisionJeu) {
             bQuestionnaire = true;
             if (bQuestionnaire) {
-                nQuestionActuelle = 1;
+
             }
             sEtatJeu = "jeu";
         }
@@ -183,6 +183,7 @@ function afficherFin() {
     dessinerDessinerBase();
     AnimationJeu(false);
     AnimationFin(true);
+    reintialiser();
 
     oContexte.fillStyle = "Yellow";
     oContexte.fillText("Veuillez frappez le joueur pour recommencer", nLargeur / 2, 100);
@@ -224,19 +225,19 @@ function ecrireReponses(nChoixActuelles) {
     oContexte.font = "22px Playpen";
     switch (nChoixActuelles) {
         case 1:
-            oContexte.fillStyle = "Blue";
+            oContexte.fillStyle = "#5069b1";
             oContexte.fillText("Superman", 300, 110);
             oContexte.fillText("Sonic", 450, 110);
             oContexte.fillText("Porcépique", 590, 110);
             break;
         case 2:
-            oContexte.fillStyle = "Red";
+            oContexte.fillStyle = "#b0191b";
             oContexte.fillText("Mario", 310, 110);
             oContexte.fillText("Knuckles", 450, 110);
             oContexte.fillText("Flash", 580, 110);
             break;
         case 3:
-            oContexte.fillStyle = "Green";
+            oContexte.fillStyle = "#62b041";
             oContexte.fillText("Luigi", 310, 110);
             oContexte.fillText("Scourge", 450, 110);
             oContexte.fillText("Link", 580, 110);
@@ -250,7 +251,7 @@ function ecrireReponses(nChoixActuelles) {
 function retourCommandes() {
     oContexte.fillStyle = "rgb(206, 206, 206)";
     oContexte.fillRect(oBoutonAuCommande.nPositionX, oBoutonAuCommande.nPositionY, oBoutonAuCommande.nLargeurBoutonX, oBoutonAuCommande.nHauteurBoutonY);
-    oContexte.fillStyle = "yellow";
+    oContexte.fillStyle = "#aea834";
     oContexte.font = "24px Playpen";
     oContexte.fillText("Commande", 100, 75);
     oContexte.fillText("Détruisez les boîtes et les squelettes", nLargeur / 2, 75);
@@ -261,6 +262,12 @@ function retourCommandes() {
         sEtatJeu = "commande";
         MusiqueJeu(false);
     }
+}
+
+function reintialiser() {
+    nTempsPassee = 0;
+    nTempsPasseeJeu = 0;
+    nQuestionActuelle = 1;
 }
 
 //Fonctions intéractives
