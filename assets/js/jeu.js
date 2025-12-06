@@ -147,7 +147,7 @@ let oImagePersonnageJeuHeroDroite = {
 
 let oImagePersonnageJeuEnnemiGauche = {
     nPositionX: 300,
-    nPositionY: 125,
+    nPositionY: 135,
     nLargeurFrame: 16, // 96/6 = 16
     nHauteurFrame: 17,
     nFrameActuelle: 0,
@@ -159,7 +159,7 @@ oImagePersonnageJeuEnnemiGauche.Image.src = oImagePersonnageJeuEnnemiGauche.src;
 
 let oImagePersonnageJeuEnnemiMillieu = {
     nPositionX: 415,
-    nPositionY: 125,
+    nPositionY: 135,
     nLargeurFrame: 16, // 96/6 = 16
     nHauteurFrame: 17,
     nFrameActuelle: 0,
@@ -171,7 +171,7 @@ oImagePersonnageJeuEnnemiMillieu.Image.src = oImagePersonnageJeuEnnemiMillieu.sr
 
 let oImagePersonnageJeuEnnemiDroite = {
     nPositionX: 530,
-    nPositionY: 125,
+    nPositionY: 135,
     nLargeurFrame: 16, // 96/6 = 16
     nHauteurFrame: 17,
     nFrameActuelle: 0,
@@ -301,7 +301,7 @@ function genererHitboxes(){
     aHitBoxHeroMur = [];
     aHitBoxHeroBoite = [];
     aHitBoxHeroEnnemi = [];
-    // zone du squelette à gauche
+    // collision des murs du squelette à gauche
 
     for (nPositionImageX = oImagePersonnageJeuEnnemiGauche.nPositionX + 16;
         nPositionImageX < oImagePersonnageJeuEnnemiGauche.nPositionX + 100;
@@ -331,7 +331,7 @@ function genererHitboxes(){
         }
     }
     
-    // zone du squelette au millieu
+    // collision des murs du squelette au millieu
 
     for (nPositionImageX = oImagePersonnageJeuEnnemiMillieu.nPositionX + 32;
         nPositionImageX < oImagePersonnageJeuEnnemiMillieu.nPositionX + 100;
@@ -361,7 +361,7 @@ function genererHitboxes(){
         }
     }
 
-    // zone du squelette à droite
+    // collision des murs du squelette à droite
 
     for (nPositionImageX = oImagePersonnageJeuEnnemiDroite.nPositionX + 16;
         nPositionImageX < oImagePersonnageJeuEnnemiDroite.nPositionX + 100;
@@ -391,7 +391,7 @@ function genererHitboxes(){
         }
     }
 
-    // zone des murs
+    // collision des murs
     for (nPositionImageX = -1; nPositionImageX < 270; nPositionImageX += 18) {
         aHitBoxHeroMur.push({nPositionX:nPositionImageX, nPositionY:nPositionImageY, nLargeurFrame:18, nHauteurFrame:18});
         if (nPositionImageX >= 250 && nPositionImageY < 600) {
@@ -414,7 +414,7 @@ function genererHitboxes(){
         }
     }
 
-    //zone du joueur
+    //collision des murs autour du joueur
 
     for (nPositionImageX = 470; nPositionImageX < 590; nPositionImageX += 18) {
         aHitBoxHeroMur.push({nPositionX:nPositionImageX, nPositionY:nPositionImageY, nLargeurFrame:18, nHauteurFrame:18});
@@ -443,7 +443,7 @@ function genererHitboxes(){
     }
 
 
-    //Dessin du vide
+    // collision du vide
 
     for (nPositionImageX = 0; nPositionImageX < 960; nPositionImageX += 18) {
         aHitBoxHeroMur.push({nPositionX:nPositionImageX, nPositionY:nPositionImageY, nLargeurFrame:18, nHauteurFrame:18});
@@ -456,11 +456,11 @@ function genererHitboxes(){
         }
     }
 
-    // Dessin des boîtes
+    // collision des boîtes
 
     genererHitboxesBoites();
     
-    // Dessin des squelettes
+    // collision des squelettes
 
     aHitBoxHeroEnnemi.push({nPositionX:oImagePersonnageJeuEnnemiGauche.nPositionX, 
             nPositionY:oImagePersonnageJeuEnnemiGauche.nPositionY,

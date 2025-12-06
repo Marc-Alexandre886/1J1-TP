@@ -40,9 +40,9 @@ let oBoutonPourJouer = {
 };
 
 let oBoutonAuCommande = {
-    nPositionX : 35,
+    nPositionX : 13,
     nPositionY : 45,
-    nLargeurBoutonX : 135,
+    nLargeurBoutonX : 155,
     nHauteurBoutonY : 40,
 };
 
@@ -140,7 +140,7 @@ function afficherCommande(bActivee) {
         oContexte.fillText("Se déplacer à gauche : Flèche de gauche ou 'A'", nLargeur / 2, 200);
         oContexte.fillText("Se déplacer à droite : Flèche de droite ou 'D'", nLargeur / 2, 250);
         oContexte.fillText("Faire une attaque : 'espace' ou 'enter'", nLargeur / 2, 300);
-        oContexte.fillText("Raplacer une boîte bleu : 'shift' ou 'backspace'", nLargeur / 2, 350);
+        oContexte.fillText("Replacer une boîte bleu : 'shift' ou 'backspace'", nLargeur / 2, 350);
 
         oContexte.fillStyle = "white";
         oContexte.fillRect(oBoutonPourJouer.nPositionX, oBoutonPourJouer.nPositionY, 
@@ -239,7 +239,7 @@ function ecrireReponses(nChoixActuelles) {
         case 3:
             oContexte.fillStyle = "#62b041";
             oContexte.fillText("Luigi", 310, 110);
-            oContexte.fillText("Scourge", 450, 110);
+            oContexte.fillText("Shadow", 450, 110);
             oContexte.fillText("Link", 580, 110);
             break;
         default:
@@ -251,10 +251,10 @@ function ecrireReponses(nChoixActuelles) {
 function retourCommandes() {
     oContexte.fillStyle = "rgb(206, 206, 206)";
     oContexte.fillRect(oBoutonAuCommande.nPositionX, oBoutonAuCommande.nPositionY, oBoutonAuCommande.nLargeurBoutonX, oBoutonAuCommande.nHauteurBoutonY);
-    oContexte.fillStyle = "#aea834";
-    oContexte.font = "24px Playpen";
-    oContexte.fillText("Commande", 100, 75);
-    oContexte.fillText("Détruisez les boîtes et les squelettes", nLargeur / 2, 75);
+    oContexte.fillStyle = "#fff200ff";
+    oContexte.font = "28px Playpen";
+    oContexte.fillText("Commande", 90, 75);
+    oContexte.fillText("Détruisez les boîtes et les squelettes", (nLargeur / 2) - 30, 75);
     let bCollisionCommande = verifierCollisions(oSouris.nPositionCurseurX, oSouris.nPositionCurseurY,
                                     oBoutonAuCommande.nPositionX, oBoutonAuCommande.nPositionY,
                                     oBoutonAuCommande.nLargeurBoutonX, oBoutonAuCommande.nHauteurBoutonY);
