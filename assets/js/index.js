@@ -165,7 +165,7 @@ function afficherIntro() {
     oContexte.textAlign = "center";
     oContexte.fillText("The legend of stranger", nLargeur / 2, 100);
     oContexte.fillStyle = `rgba(228, 34, 34, ${oAnimationTitreIntro.nOpacite})`;
-    oContexte.fillText("Frappez le squelette pour découvrir la vérité.", nLargeur / 2, 500);
+    oContexte.fillText("Frappez le squelette pour découvrir la véritée.", nLargeur / 2, 500);
 }
 
 function afficherJeu() {
@@ -228,7 +228,7 @@ function ecrireReponses(nChoixActuelles) {
             oContexte.fillStyle = "#5069b1";
             oContexte.fillText("Superman", 300, 110);
             oContexte.fillText("Sonic", 450, 110);
-            oContexte.fillText("Porcépique", 590, 110);
+            oContexte.fillText("Porc-épic", 590, 110);
             break;
         case 2:
             oContexte.fillStyle = "#b0191b";
